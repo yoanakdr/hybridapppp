@@ -1,0 +1,168 @@
+//zad. 1
+
+function sum(arr) {
+    let n1 = Number(arr[0]);
+    let n2 = Number(arr[1]);
+    let n3 = Number(arr[2]);
+    
+    let sum = n1 + n2 + n3;
+    console.log(sum);
+    }
+    sum(['2', '3', '4']);
+
+//zad. 2
+
+function vatcalc(arr){
+let sum = 0;
+for(let price of arr){
+
+sum += Number(price);
+}
+console.log({sum})
+let vat = sum*0.2;
+console.log({vat})
+let total=sum+vat;
+console.log({total});
+}
+vatcalc(['1.20', '2.60', '3.50']);
+
+//zad. 3
+
+function Letterc([string, letter]){
+    let count=0;
+    
+    for(let char of string){
+    if(char=letter){
+    count++;
+    }
+    }
+    console.log({count});
+    }
+    Letterc(['hello', 'l']); 
+
+//zad. 4
+
+function figure([w, h, W, H]){
+    let fig1Ar = Number(w) * Number(h);
+    let fig2Ar = Number(W) * Number(H);
+    
+    let ecke = Math.min(Number(w), Number(W)) * Math.min(Number(H));
+    
+    let s = fig1Ar + fig2Ar - ecke;
+    
+    console.log(figure);
+    }
+    figure(['2', '4', '5', '3']);
+
+//zad. 5
+
+function leapY(year){
+    let c1 = year % 4 == 0 && year % 100 !=0;
+    let c2 = year % 400 == 0;
+    if(c1 || c2){
+    console.log('Yes');
+    return;
+    }
+    console.log('No');
+    }
+    leapY(1996);
+    leapY(2000);
+
+//zad. 6
+
+function Numbersstring(last){
+    let result = '';
+    for(let i=1; i<=last;i++){
+    result += i;
+    }
+    console.log(result);
+    }
+    Numbersstring(10);
+    Numbersstring(20);
+
+//zad. 7
+
+function distance([x1, y1, x2, y2]){
+let one = Math.pow((Number(x2) - Number(x1)), 2);
+let two = Math.pow((Number(y2) - Number(y1)),2);
+let result = Math.sqrt(one + two);
+
+console.log(result);
+}
+distance(['3', '7', '6', '0']);
+
+//zad. 8
+
+function boxesBottles(bottles, capacity){
+    let result = Math.cell(bottles/capacity);
+    console.log(result);
+    }
+    boxesBottles(20,5);
+    boxesBottles(15,7);
+
+//zad. 9
+
+function triangle(arr){
+    arr = arr.map(Number);
+    
+    let sideA = arr[0];
+    let sideB = arr[1];
+    let sideC = arr[2];
+    
+    let semiperim = (sideA + sideB + sideC) /2;
+    let area = Math.sqrt(semiperim * (semiperim - sideA) * (semiperim - sideB) * (semiperim - sideC));
+    
+    console.log(area);
+    }
+    triangle(['3', '4', '5']);
+
+//zad. 11
+
+function UnEven(number){
+if(number % 1 == 0){
+if(number % 2 == 0){
+console.log("even");
+}else{
+console.log("uneven");
+}
+}
+else{
+console.log('invalid');
+}
+}
+
+UnEven(2);
+UnEven(5);
+UnEven(2.5);
+
+//zad. 15
+
+function biggest ([n1, n2, n3]){
+    [n1, n2, n3] = [n1, n2, n3].map(Number);
+    console.log(Math.max(n1, n2, n3));
+    }
+    biggest(['-3', '50', '10']);
+    biggest(['16', '78', '-10']);
+    biggest(['21', '200', '80']);
+
+//zad. 16
+
+function  calcu([a, b, op]){
+    [a, b] = [a, b].map(Number);
+    let add = function (a, b) {return a + b;}
+    let sub = function (a, b) {return a-b;}
+    let multi = function (a, b) {return a*b;}
+    let dev = function (a, b) {return a/b;}
+    let calcu2 = function(a, b, op) {return  op(a, b);};
+    
+    switch(op){
+    case '+' : return calcu2(a, b, add);
+    case '-' : return calcu2(a, b, sub);
+    case '*' : return calcu2(a, b, multi);
+    case '/' : return calcu2(a, b, dev);
+    }
+    }
+    console.log(calcu(['2', '6', '+']));
+    console.log(calcu(['4', '4', '+']));
+    console.log(calcu(['8', '4', '/']));
+    console.log(calcu(['2', '6', '/']));
